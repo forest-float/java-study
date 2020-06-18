@@ -58,7 +58,26 @@ public class array {
 		if(stra.equals(strb)){//比较的是内容
 			System.out.println("true");
 		}
-		System.out.print("hello".equals(stra));//字符串常量就是String的匿名对象
+		//比较内容是否相同
+		System.out.println("hello".equals(stra));//字符串常量就是String的匿名对象
+		
+		//String 实例化的两种方法    直接赋值，构造方法实例化
+		String strc = "hello";//直接赋值
+		//直接赋值的内容在堆内存，引用在栈内存，    直接赋值可以实现堆内存的重用
+		//相同的内容的情况下，不开辟新堆内存空间，指向原有空间，不同才开辟新空间
+		//String 类采用的是共享设计模式，直接赋值，内容相同 ，内存共享
+		String strd = new String("hello");//构造方法实例化
+		System.out.println(strc == strd);//false ==比较的是内存地址，new表示新的内存，所以错误
+		//构造方法先在堆开辟内存保存字符串，在使用new开辟另一块堆内存空间，原先定义的空间变为垃圾
+		//因此其内容不会自动保存到对象池
+		//也可以进行手工进行入池
+		String stre = new String("hello").intern();//进行手工入池
+		System.out.println(strc == stre);//true
+		
+		// 每一个字符串都是一个String类的匿名对象
+		
+		//String内容的修改属于引用关系的变更，最好不要频繁修改，会导致大量垃圾的产生
+		
 	}
 	
 	public void change(int temp[]){//数组传递

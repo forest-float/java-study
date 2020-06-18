@@ -10,6 +10,20 @@ class Book{
 	public void getInfo(){
 		System.out.println("name: " + name + " title: " + price);
 	}
+	public boolean compare(Book book) {
+		// TODO Auto-generated method stub
+		if(book == null){
+			return false;
+		}
+		if(this == book){
+			return true;
+		}
+		if(this.name.equals(book.name)  && this.price == book.price){
+			return true;
+		}else{
+			return false;
+		}		
+	}
 }
 public class OOP1{
 	public static void main(String args[]){
@@ -35,6 +49,8 @@ public class OOP1{
 		for(int i = 0; i < arra.length; i++){
 			System.out.println(arra[i]);
 		}
+		
+		new listandjava();
 	}
 }
 class Books{
