@@ -1,12 +1,8 @@
 package com.uitl.fileclass;
 
-import java.awt.print.Printable;
 import java.io.File;
-import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Date;
-
-import com.sun.org.apache.bcel.internal.generic.NEW;
 
 public class BasicDemo {
 	public static void main(String[] args) throws Exception {
