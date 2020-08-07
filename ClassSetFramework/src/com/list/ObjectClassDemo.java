@@ -2,6 +2,7 @@ package com.list;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class ObjectClassDemo {
 	//ArrayList中保存的数据是可变的，Array中保存的数据是可变的
@@ -12,6 +13,8 @@ public class ObjectClassDemo {
 		all.add(new Book("bbb", 98.6));
 		all.add(new Book("ccc", 98.6));
 		all.remove(2);
+		Collections.addAll(all, new Book("ccc",98.6));
+		//collections工具类
 		System.out.println(all);
 	}
 
@@ -41,7 +44,5 @@ class Book{
 			return true;
 		}		
 		return false;
-	}
-	
-	
+	}	
 }
